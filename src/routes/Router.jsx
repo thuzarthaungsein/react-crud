@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import Home from "../pages/Home";
+import EditTask from "../pages/Tasks/edit";
 
 const routes = [
   {
@@ -12,6 +13,10 @@ const routes = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "tasks/:id/edit",
+        element: <EditTask />,
       },
     ],
   },

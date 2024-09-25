@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -129,7 +130,10 @@ const TaskList = () => {
                     </div>
                   </td>
                   <td className="whitespace-no-wrap py-4 text-sm font-normal text-gray-500 sm:px-6 lg:table-cell">
-                    <span className="inline-flex items-center rounded-md bg-blue-500 py-2 px-3 text-xs text-white cursor-pointer hover:bg-blue-700">
+                    <Link
+                      to={`/tasks/${task.id}/edit`}
+                      className="inline-flex items-center rounded-md bg-blue-500 py-2 px-3 text-xs text-white cursor-pointer hover:bg-blue-700"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -145,7 +149,7 @@ const TaskList = () => {
                         />
                       </svg>
                       Edit
-                    </span>
+                    </Link>
                   </td>
                 </tr>
               ))
